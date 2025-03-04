@@ -7,8 +7,8 @@ pip install -r requirements.txt
 ```
 ## Setup Environtment - Terminal
 ```
-mkdir proyek_analisis_data
-cd proyek_analisis_data
+mkdir Belajar Analisis Data dengan Python
+cd Belajar Analisis Data dengan Python
 pip install -r requirements.txt
 ```
 ## Run stramlit
