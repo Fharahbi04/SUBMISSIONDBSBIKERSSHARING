@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-df_hari = pd.read_csv("df_hari.csv")
-df_jam = pd.read_csv("df_jam.csv")
+df_hari = pd.read_csv("Dasboard/df_hari.csv")
+df_jam = pd.read_csv("Dasboarddf_jam.csv")
 
 kelompok_Musim={
     1: "Sangat sedikit pengguna",
@@ -22,7 +22,7 @@ suhu_labels = ["Dingin","Sedang","Panas"]
 df_hari["suhu_kategori"] = pd.cut(df_hari["temp"], bins=suhu_bins, labels=suhu_labels)
 
 with st.sidebar:
-        st.image("bike.png",width=300)
+        st.image("Dasboard/bike.png",width=300)
         st.title("DBS BIKERS-SHARING")
         
         option = st.selectbox(
