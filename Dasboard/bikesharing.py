@@ -90,16 +90,15 @@ elif option == "Perbandingan Peminjam":
 
 elif option == "Pola pengguaan sepeda":
     st.subheader (" Pola Pengguna Sepeda(Perjam)")
-    pengguna_jumlah=df_jam[['holiday','weekday','workingday',]].value_counts().reset_index()
-    pengguna_jumlah.columns=['holiday','weekday','workingday','count']
-
+    pengguna_jam = df_jam.groupby("hr")["cnt"].mean()
     plt.figure(figsize=(10, 6))
-    sns.barplot(x='weekday', y='count', hue='workingday', data=pengguna_jumlah, palette='viridis')
+    sns.lineplot(x=pengguna_jam.index, y=pengguna_jam.values, marker="o",linewidth=2.5, color="blue")
 
-    plt.title("Holiday,weekday,workingday",fontsize=13,fontweight="bold")
-    plt.xlabel("Weekday/Hari biasa(0 = minggu,6 = sabtu)",fontsize=13,fontweight="bold")
-    plt.ylabel("jumlah",fontsize=13,fontweight="bold")
-    plt.legend(title="workingday",fontsize=13)
+    plt.title("Jumlah Pengguna Sepeda Berdasarkan Jam",fontsize=13,fontweight="bold")
+    plt.xlabel("Jam",fontsize=13,fontweight="bold")
+    plt.ylabel("Jumlah Pengguna",fontsize=13,fontweight="bold")
+    plt.xticks(range(0, 24))
+    plt.grid(True, linestyle="--", alpha=0.6)
     st.pyplot(plt)
 
     st.subheader ("Pola Pengguna Sepeda(Perhari)")
