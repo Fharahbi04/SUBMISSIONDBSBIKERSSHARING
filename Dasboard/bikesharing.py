@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 df_hari = pd.read_csv("Dasboard/df_hari.csv")
-df_jam = pd.read_csv("Dasboarddf_jam.csv")
+df_jam = pd.read_csv("Dasboard/df_jam.csv")
 
 kelompok_Musim={
     1: "Sangat sedikit pengguna",
